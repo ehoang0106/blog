@@ -1,0 +1,35 @@
+name: Push code to khoahoang.dev
+
+# Trigger when push code to master branch
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  Deploy-to-S3: # Name of the job
+    runs-on: ubuntu-latest # Run on ubuntu latest server
+
+    steps:
+      # Configure AWS Credentials
+      - name: Configure AWS Credentials
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: "us-east-1"
+        run: |
+          mkdir -p ~/.aws
+          echo "[default]" > ~/.aws/credentials
+          echo "aws_access_key_id=${AWS_ACCESS_KEY_ID}" >> ~/.aws/credentials
+          echo "aws_secret_access_key=${AWS_SECRET_ACCESS_KEY}" >> ~/.aws/credentials
+          echo "region=${AWS_DEFAULT_REGION}" >> ~/.aws/credentials
+
+      # Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Sync the public folder to S3
+      - name: Sync public folder to S3 bucket blog.khoahoang.dev
+        run: |
+          aws s3 sync ./public/ s3://blog.khoahoang.dev
