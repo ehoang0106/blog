@@ -19,6 +19,7 @@ nav:
   articles: /archives/
 
 
+
 # Links to your social media accounts.
 # The 'icon' keys should correspond to Fontawesome icon names
 # (see https://fontawesome.com/icons?d=gallery&s=brands);
@@ -93,7 +94,7 @@ error_404:
 #   - gravatar: whether to use your Gravatar as the logo
 #   - grayout: whether to enable a hover effect on the logo
 logo:
-  enabled: true
+  enabled: false
   width: 50
   height: 50
   url: /images/logo.png
@@ -158,7 +159,7 @@ mathjax:
 
 # Fill in your Disqus Comments Shortname to enable Disqus comments.
 disqus:
-  enabled: false
+  enabled: true
   shortname: cactus-1
 
 # Fill in your Utterances data to enable Utterances comments
@@ -172,22 +173,22 @@ utterances:
 # Fill in your Google Analytics tracking ID to enable Google Analytics.
 google_analytics:
   enabled: false
-  id: UA-86660611-1
+  id: UA-86660911-1
 
 # Fill in your Baidu Analytics tracking ID to enable Baidu Analytics.
 baidu_analytics:
   enabled: false
-  id: 2e6da3c375c8a87f5b664cea6d4cb29c
+  id: 2e6da3c375c8a87f5b664cea6d4cb2d1
 
 # Fill in your Cloudflare Analytics tracking ID to enable Cloudflare Analytics.
 cloudflare_analytics:
   enabled: false
-  id: 0dabb6e21848405483a237e6a7b6ed04
+  id: 0dabb6e21848405483a237e6a7b6ed05
 
 # Fill in your Umami Analytics tracking ID to enable Umami Analytics.
 umami_analytics:
   enabled: false
-  id: e77e68be-f6e4-4br3-9365-2b76b57cd571
+  id: e77e68be-f6e4-4br3-9365-2b76b57cd576
   host: https://analytics.domain.com
   script_name: umami.js
 
