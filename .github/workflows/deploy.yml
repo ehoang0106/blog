@@ -38,11 +38,11 @@ jobs:
       # Install Hexo
       - name: Install Hexo
         run: |
-          npm install hexo-cli -g # Install Hexo globally
-          npm install # Install dependencies from package.json (if applicable)
+          npm install hexo-cli -g 
+          npm install 
 
       # Generate files
-      - name: Generate files
+      - name: Generate files from markdown file using hexo
         run: |
           hexo generate
 
