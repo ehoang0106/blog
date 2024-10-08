@@ -16,7 +16,6 @@ direction: ltr
 nav:
   home: /
   about: /about/
-  articles: /archives/
 
 
 
@@ -32,10 +31,10 @@ social_links:
     link: https://github.com/ehoang0106
   -
     icon: linkedin
-    link: /
+    link: https://www.linkedin.com/in/khoa-hoang-9042091a0/
   -
     icon: mail
-    link: mailto:example@gmail.com
+    link: mailto:khoahoang1698@gmail.com
 
 
 # Customize the overview with displaying a tagcloud on the index page.
