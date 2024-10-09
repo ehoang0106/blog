@@ -16,6 +16,7 @@ For hosting, I utilize Amazon S3, providing reliable storage for my static files
 
 Finally, Amazon CloudFront enhances performance by caching my content globally, ensuring quick load times and secure connections with HTTPS. This serverless architecture makes my blog scalable, efficient, and easy to maintain—perfect for sharing my thoughts.
 
-This setup works well, but I might improve security in the future by using Terraform for automation and GitHub OAuth instead of IAM Access Keys, reducing credential risks.
-
+This setup works well, however there are a few improvements that I could think off:
+- Setup Terraform as IaC to manage the resources.
+- GitHub OIDC instead of using IAM Access Keys, reducing the risk of exposing the AWS credentials.
 This blog uses the [Cactus](https://github.com/probberechts/hexo-theme-cactus) theme by [Pieter Robberechts](https://github.com/probberechts)
