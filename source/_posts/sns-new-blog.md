@@ -14,3 +14,4 @@ The project involves two main components. First, I created a Lambda function tha
 
 The second component is another Lambda function integrated with API Gateway, which handles subscription confirmations to the SNS topic. Additionally, I set up a custom domain using API Gateway and Route 53 to manage the DNS records for my new domain.
 
+--

@@ -21,3 +21,5 @@ This setup works well, however there are a few improvements that I could think o
 - GitHub OIDC instead of using IAM Access Keys, reducing the risk of exposing the AWS credentials.
 
 P/s: This blog uses the [Cactus](https://github.com/probberechts/hexo-theme-cactus) theme by [Pieter Robberechts](https://github.com/probberechts)
+
+--

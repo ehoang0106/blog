@@ -11,8 +11,17 @@
     </div>
   </header>
 
+  
+   
+  <%- partial('_partial/post/gallery') %>
+  <div class="content e-content" itemprop="articleBody">
+    <%- page.content %>
+    
+  </div>
+
   <!-- Khoa Edit -->
-  <button id="subscribeButton" class="dark-theme-button" style="font-family: 'Menlo', 'Meslo LG', 'monospace'">Subscribe</button>
+
+  <a href="#" id="subscribeLink" class="dark-theme-link" style="font-family: 'Menlo', 'Meslo LG', 'monospace'; font-style: italic; font-size: 12px;">Never miss a beat, subscribe to the blog</a>
 
   <div id="subscribeDialog" style="display:none;">
     <input type="email" id="emailInput" placeholder="Enter your email" required style="font-family: 'Menlo', 'Meslo LG', 'monospace'">
@@ -20,6 +29,17 @@
   </div>
 
   <style>
+    .dark-theme-link {
+      color: #fff;
+      text-decoration: underline;
+      cursor: pointer;
+      font-family: 'Vazir-Regular', sans-serif;
+    }
+
+    .dark-theme-link:hover {
+      color: #aaa;
+    }
+
     .dark-theme-button {
       background-color: #333;
       color: #fff;
@@ -42,6 +62,7 @@
       width: 300px;
       margin: 0 auto;
       text-align: center;
+      margin-top: 20px;
     }
 
     #emailInput {
@@ -55,7 +76,8 @@
   </style>
 
   <script>
-    document.getElementById('subscribeButton').addEventListener('click', function() {
+    document.getElementById('subscribeLink').addEventListener('click', function(event) {
+      event.preventDefault();
       var dialog = document.getElementById('subscribeDialog');
       if (dialog.style.display === 'none' || dialog.style.display === '') {
         dialog.style.display = 'block';
@@ -76,11 +98,6 @@
   </script>
 
   <!-- End Khoa Edit -->
-   
-  <%- partial('_partial/post/gallery') %>
-  <div class="content e-content" itemprop="articleBody">
-    <%- page.content %>
-    
-  </div>
+
 </article>
 <%- partial('_partial/comments') %>
