@@ -140,6 +140,25 @@ page_width: 48
 # Enable or disable the RSS feed.
 rss: true
 
+feed:
+    limit: 20
+    order_by: "-date"
+    tag_dir: "tag"
+    category_dir: "category"
+    rss:
+        enable: true
+        template: "themes/theme/layout/_alternate/rss.ejs"
+        output: "rss.xml"
+    atom:
+        enable: true
+        template: "themes/theme/layout/_alternate/atom.ejs"
+        output: "atom.xml"
+    jsonFeed:
+        enable: true
+        template: "themes/theme/layout/_alternate/json.ejs"
+        output: "feed.json"
+
+
 # Turn your web pages into graph objects (see http://ogp.me).
 open_graph:
   fb_app_id:

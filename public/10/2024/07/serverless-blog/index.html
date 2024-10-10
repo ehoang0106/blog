@@ -15,7 +15,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://s3.us-west-1.amazonaws.com/www.khoahoang.dev/serverless-blog/serverless.jpg">
 <meta property="article:published_time" content="2024-10-07T21:43:13.000Z">
-<meta property="article:modified_time" content="2024-10-08T04:44:39.114Z">
+<meta property="article:modified_time" content="2024-10-10T16:48:00.359Z">
 <meta property="article:author" content="Khoa Hoang">
 <meta property="article:tag" content="serverless">
 <meta name="twitter:card" content="summary">
@@ -56,6 +56,8 @@
     <!-- rss -->
     
     
+      <link rel="alternate" href="/true" title="Khoa Hoang" type="application/atom+xml" />
+    
 	<!-- mathjax -->
 	
 <meta name="generator" content="Hexo 7.3.0"></head>
@@ -79,6 +81,8 @@
     <br/>
     <span id="actions">
       <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/10/2024/09/sns-new-blog/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
         <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
@@ -147,6 +151,9 @@
 
     </div>
   </header>
+
+  
+   
   
 
   <div class="content e-content" itemprop="articleBody">
@@ -156,10 +163,97 @@
 <p>To automate deployments, I leverage GitHub Actions and AWS IAM Access Key, which triggers workflows every time I push changes, ensuring my site is always up-to-date without manual effort. </p>
 <p>For hosting, I utilize Amazon S3, providing reliable storage for my static files and Amazon Route 53 routes traffic efficiently to my S3 bucket.</p>
 <p>Finally, Amazon CloudFront enhances performance by caching my content globally, ensuring quick load times and secure connections with HTTPS. This serverless architecture makes my blog scalable, efficient, and easy to maintain—perfect for sharing my thoughts.</p>
-<p>This setup works well, but I might improve security in the future by using Terraform for automation and GitHub OAuth instead of IAM Access Keys, reducing credential risks.</p>
-<p>This blog uses the <a target="_blank" rel="noopener" href="https://github.com/probberechts/hexo-theme-cactus">Cactus</a> theme by <a target="_blank" rel="noopener" href="https://github.com/probberechts">Pieter Robberechts</a></p>
+<p>This setup works well, however there are a few improvements that I could think off:</p>
+<ul>
+<li>Setup Terraform as IaC to manage the resources.</li>
+<li>GitHub OIDC instead of using IAM Access Keys, reducing the risk of exposing the AWS credentials.</li>
+</ul>
+<p>P&#x2F;s: This blog uses the <a target="_blank" rel="noopener" href="https://github.com/probberechts/hexo-theme-cactus">Cactus</a> theme by <a target="_blank" rel="noopener" href="https://github.com/probberechts">Pieter Robberechts</a></p>
+<p>–</p>
 
+    
   </div>
+
+  <!-- Khoa Edit -->
+
+  <a href="#" id="subscribeLink" class="dark-theme-link" style="font-family: 'Menlo', 'Meslo LG', 'monospace'; font-style: italic; font-size: 12px;">-> Never miss a beat, subscribe to the blog</a>
+
+  <div id="subscribeDialog" style="display:none;">
+    <input type="email" id="emailInput" placeholder="Enter your email" required style="font-family: 'Menlo', 'Meslo LG', 'monospace'">
+    <button id="submitEmailButton" class="dark-theme-button" style="font-family: 'Menlo', 'Meslo LG', 'monospace'">Submit</button>
+  </div>
+
+  <style>
+    .dark-theme-link {
+      color: #fff;
+      text-decoration: underline;
+      cursor: pointer;
+      font-family: 'Vazir-Regular', sans-serif;
+    }
+
+    .dark-theme-link:hover {
+      color: #aaa;
+    }
+
+    .dark-theme-button {
+      background-color: #333;
+      color: #fff;
+      border: 1px solid #555;
+      padding: 5px 8px;
+      cursor: pointer;
+      border-radius: 10px;
+      font-family: 'Vazir-Regular', sans-serif;
+    }
+
+    .dark-theme-button:hover {
+      background-color: #555;
+    }
+
+    #subscribeDialog {
+      background-color: #222;
+      color: #fff;
+      padding: 10px;
+      border: 1px solid #444;
+      width: 300px;
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #emailInput {
+      background-color: #333;
+      color: #fff;
+      border: 1px solid #555;
+      padding: 10px;
+      width: calc(100% - 22px);
+      margin-bottom: 10px;
+    }
+  </style>
+
+  <script>
+    document.getElementById('subscribeLink').addEventListener('click', function(event) {
+      event.preventDefault();
+      var dialog = document.getElementById('subscribeDialog');
+      if (dialog.style.display === 'none' || dialog.style.display === '') {
+        dialog.style.display = 'block';
+      } else {
+        dialog.style.display = 'none';
+      }
+    });
+
+    document.getElementById('submitEmailButton').addEventListener('click', function() {
+      var email = document.getElementById('emailInput').value;
+      if (email) {
+        window.open('https://api.khoahoang.dev/subscribe?email=' + encodeURIComponent(email), '_blank');
+        document.getElementById('subscribeDialog').style.display = 'none';
+      } else {
+        alert('Please enter a valid email address.');
+      }
+    });
+  </script>
+
+  <!-- End Khoa Edit -->
+
 </article>
 
     <div class="blog-post-comments">
@@ -167,7 +261,6 @@
             <noscript>Please enable JavaScript to view the comments.</noscript>
         </div>
     </div>
-
 
 
         
