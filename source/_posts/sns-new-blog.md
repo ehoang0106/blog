@@ -11,8 +11,6 @@ Continuing my cloud journey, I’ve developed a new project that allows readers 
 
 The project involves two main components. First, I created a Lambda function that triggers SNS notifications whenever I publish a new post on my static website hosted on S3.
 
-![image](https://s3.amazonaws.com/blog.khoahoang.dev/images/lambda1.png)
 
 The second component is another Lambda function integrated with API Gateway, which handles subscription confirmations to the SNS topic. Additionally, I set up a custom domain using API Gateway and Route 53 to manage the DNS records for my new domain.
 
-![image](https://s3.amazonaws.com/blog.khoahoang.dev/images/lambda2.png)

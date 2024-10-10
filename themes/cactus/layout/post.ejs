@@ -10,9 +10,73 @@
       <%- partial('_partial/post/tag') %>
     </div>
   </header>
+
+  <!-- Khoa Edit -->
+  <button id="subscribeButton" class="dark-theme-button" style="font-family: 'Menlo', 'Meslo LG', 'monospace'">Subscribe</button>
+
+  <div id="subscribeDialog" style="display:none;">
+    <input type="email" id="emailInput" placeholder="Enter your email" required style="font-family: 'Menlo', 'Meslo LG', 'monospace'">
+    <button id="submitEmailButton" class="dark-theme-button" style="font-family: 'Menlo', 'Meslo LG', 'monospace'">Submit</button>
+  </div>
+
+  <style>
+
+    .dark-theme-button {
+      background-color: #333;
+      color: #fff;
+      border: 1px solid #555;
+      padding: 5px 8px;
+      cursor: pointer;
+      border-radius: 10px;
+      font-family: 'Vazir-Regular', sans-serif;
+    }
+
+    .dark-theme-button:hover {
+      background-color: #555;
+    }
+
+    #subscribeDialog {
+      background-color: #222;
+      color: #fff;
+      padding: 10px;
+      border: 1px solid #444;
+      width: 300px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    #emailInput {
+      background-color: #333;
+      color: #fff;
+      border: 1px solid #555;
+      padding: 10px;
+      width: calc(100% - 22px);
+      margin-bottom: 10px;
+    }
+  </style>
+
+  <script>
+    document.getElementById('subscribeButton').addEventListener('click', function() {
+      document.getElementById('subscribeDialog').style.display = 'block';
+    });
+
+    document.getElementById('submitEmailButton').addEventListener('click', function() {
+      var email = document.getElementById('emailInput').value;
+      if (email) {
+        window.open('https://api.khoahoang.dev/subscribe?email=' + encodeURIComponent(email), '_blank');
+        document.getElementById('subscribeDialog').style.display = 'none';
+      } else {
+        alert('Please enter a valid email address.');
+      }
+    });
+  </script>
+
+  <!-- End Khoa Edit -->
+   
   <%- partial('_partial/post/gallery') %>
   <div class="content e-content" itemprop="articleBody">
     <%- page.content %>
+    
   </div>
 </article>
 <%- partial('_partial/comments') %>
