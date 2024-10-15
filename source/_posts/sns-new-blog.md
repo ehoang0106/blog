@@ -18,6 +18,9 @@ You can try it by clicking the subscribe text below :)
 
 For full details, check out the complete setup and code on my [GitHub](https://github.com/ehoang0106/lambda-sns-blog)
 
+![image](https://blog.khoahoang.dev/media/sns-new-blog/sns2.png)
+![image](https://blog.khoahoang.dev/media/sns-new-blog/sns1.png)
+
 Here are a few improvements I could consider:
 - **S3 Event Filter for Selective Triggering**: Refine the S3 event notification to filter specific file types or prefixes, making the event more targeted and efficient.
 - **Implement Retry Logic in Lambda**: Add retry logic in the Lambda functions to handle potential failures in SNS or API requests.
