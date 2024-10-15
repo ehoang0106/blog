@@ -14,6 +14,8 @@ The project involves two main components. First, I created a Lambda function tha
 
 The second component is another Lambda function integrated with API Gateway, which handles subscription confirmations to the SNS topic. Additionally, I set up a custom domain using API Gateway and Route 53 to manage the DNS records for my new domain. 
 
+You can try it by clicking the subscribe text below :)
+
 For full details, check out the complete setup and code on my [GitHub](https://github.com/ehoang0106/lambda-sns-blog)
 
 Here are a few improvements I could consider:
