@@ -86,7 +86,14 @@
       }
     });
 
-    document.getElementById('submitEmailButton').addEventListener('click', function() {
+    document.getElementById('submitEmailButton').addEventListener('click', submitEmail);
+    document.getElementById('emailInput').addEventListener('keypress', function(event) {
+      if (event.key === 'Enter') {
+        submitEmail();
+      }
+    });
+
+    function submitEmail() {
       var email = document.getElementById('emailInput').value;
       if (email) {
         window.open('https://api.khoahoang.dev/subscribe?email=' + encodeURIComponent(email), '_blank');
@@ -94,7 +101,7 @@
       } else {
         alert('Please enter a valid email address.');
       }
-    });
+    }
   </script>
 
   <!-- End Khoa Edit -->
