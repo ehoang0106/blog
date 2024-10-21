@@ -47,6 +47,6 @@ jobs:
           hexo generate
 
       # Sync the public folder to S3
-      - name: Sync public folder to S3 bucket blog.khoahoang.dev
+      - name: Sync public folder to S3 bucket blog.khoah.net
         run: |
-          aws s3 sync ./public/ s3://blog.khoahoang.dev
+          aws s3 sync ./public/ s3://blog.khoah.net
