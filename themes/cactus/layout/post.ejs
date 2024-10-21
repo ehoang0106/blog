@@ -96,7 +96,8 @@
     function submitEmail() {
       var email = document.getElementById('emailInput').value;
       if (email) {
-        window.open('https://api.khoahoang.dev/subscribe?email=' + encodeURIComponent(email), '_blank');
+        api = 'https://api.khoah.net/subscribe?email=';
+        window.open(api + encodeURIComponent(email), '_blank');
         document.getElementById('subscribeDialog').style.display = 'none';
       } else {
         alert('Please enter a valid email address.');
