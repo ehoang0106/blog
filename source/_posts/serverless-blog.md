@@ -4,7 +4,7 @@ date: 2024-10-07 14:43:13
 tags: serverless
 ---
 
-![image](https://s3.us-west-1.amazonaws.com/www.khoahoang.dev/serverless-blog/serverless.jpg)
+![image](https://s3.us-west-1.amazonaws.com/www.khoah.net/serverless-blog/serverless.jpg)
 
 This blog is serverless using combination of Hexo, GitHub, AWS S3, AWS Route 53, and AWS CloudFront.
 

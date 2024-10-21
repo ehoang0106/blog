@@ -4,7 +4,7 @@ date: 2024-10-09 13:47:26
 tags: serverless, sns, s3, lambda, api
 ---
 
-![image](https://blog.khoahoang.dev/images/sns.jpg)
+![image](https://blog.khoah.net/images/sns.jpg)
 
 
 Continuing my cloud journey, I’ve developed a new project that allows readers to subscribe to my blog via email. For this, I utilized several AWS services, including SNS, Lambda, API Gateway, Route 53, and S3 Events.
@@ -18,8 +18,8 @@ You can try it by clicking the subscribe text below :)
 
 For full details, check out the complete setup and code on my [GitHub](https://github.com/ehoang0106/lambda-sns-blog)
 
-![image](https://blog.khoahoang.dev/media/sns-new-blog/sns2.png)
-![image](https://blog.khoahoang.dev/media/sns-new-blog/sns1.png)
+![image](https://blog.khoah.net/media/sns-new-blog/sns2.png)
+![image](https://blog.khoah.net/media/sns-new-blog/sns1.png)
 
 Here are a few improvements I could consider:
 - **S3 Event Filter for Selective Triggering**: Refine the S3 event notification to filter specific file types or prefixes, making the event more targeted and efficient.
