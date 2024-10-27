@@ -4,7 +4,7 @@ date: 2024-10-01 12:16:26
 ---
 # About me
 
-![image](https://s3.amazonaws.com/blog.khoahoang.dev/images/ava.jpg)
+![image](https://s3.amazonaws.com/blog.khoah.net/images/ava.jpg)
 
 Welcome to my blog! 
 
