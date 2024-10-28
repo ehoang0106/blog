@@ -4,11 +4,12 @@ date: 2024-10-20 09:07:38
 tags:
 ---
 ![image](https://blog.khoah.net/media/terraform-github-action-for-valheim/valheim-cover.jpg)
-I love playing survival games, and Valheim is the best one I've ever played. Developed by Iron Gate, Valheim is a survival sandbox game set in a stunning, Norse-inspired world. Players take on the role of a Viking warrior, exploring, crafting, and building to prove themselves to the gods, all while being under 1 GB in size. With a mix of exploration, combat, and resource management, I decided to host a server to invite my friend, making it an even more thrilling adventure.
+I love playing survival games, and Valheim is the best one I've ever played. Developed by Iron Gate, Valheim is a survival sandbox game set in a stunning, Norse-inspired world. Players take on the role of a Viking warrior, exploring, crafting, and building to prove themselves to the gods, all while being under 1 GB in size.
+
+With a mix of exploration, combat, and resource management, I decided to host a server to invite my friend, making it an even more thrilling adventure.
 
 Because the game very light, a t3 medium instance is enough, here is full specs of the instance:
 
-![image](https://blog.khoah.net/media/terraform-github-action-for-valheim/graph.png)
 
 Since the game is very light, a T3 medium instance is sufficient. Here are the full specifications of the instance:
 
@@ -22,6 +23,10 @@ A security group with the following rules:
 - Custom TCP: Port `2456-2458`
 - Custom UDP: Port `2456-2458`
 - SSH: TCP `Port 22` open to my IP
+
+You can check out the graph below for the full setup:
+
+![image](https://blog.khoah.net/media/terraform-github-action-for-valheim/graph.png)
 
 For docker image in the server, I'm using the image of [mbround18](https://hub.docker.com/r/mbround18/valheim). The container has been running smoothly without issues. 
 
@@ -56,5 +61,31 @@ With the command `!up`, the bot initiates the EC2 instance hosting the Valheim s
 
 When the session is over, the `!down` command shuts down the instance when needed beside the CloudWatch setup to automatically turn off the server if there is no connection. 
 
-This bot-based control lets me manage the server remotely without needing to log into the AWS console. You can also check it out at my [GitHub](https://github.com/ehoang0106/terraform-valheim-server/tree/master/discord_bot).
+Here is an example of a CloudWatch setup to monitor `NetworkPacketsIn` over a 5-minute period with a threshold of `300`.
 
+```docker
+resource "aws_cloudwatch_metric_alarm" "valheim-network-in-alarm" {
+alarm_name                = "vrisng-network-in-alarm"
+comparison_operator       = "LessThanOrEqualToThreshold"
+evaluation_periods        = 2
+metric_name               = "NetworkPacketsIn"
+namespace                 = "AWS/EC2"
+period                    = 300
+statistic                 = "Maximum"
+threshold                 = 300
+alarm_description         = "Monitor network packets in"
+dimensions = {
+    InstanceId = resource.aws_instance.valheim-instance.id
+}
+actions_enabled     = "true"
+alarm_actions       = ["arn:aws:automate:us-west-1:ec2:stop"]
+}
+```
+
+This bot-based control lets me manage the server remotely without needing to log into the AWS console.
+
+![image](https://blog.khoah.net/media/terraform-github-action-for-valheim/discord_sc.png)
+
+In case you're wondering why there's an S3 bucket, it's used to store the `tfstate` file as specified in [provider.tf](https://github.com/ehoang0106/terraform-valheim-server/blob/master/terraform/provider.tf)
+
+For the full code setup and instruction, please check out my [GitHub Repository](https://github.com/ehoang0106/terraform-valheim-server)
