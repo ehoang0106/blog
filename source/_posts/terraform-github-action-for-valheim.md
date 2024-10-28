@@ -22,5 +22,39 @@ A security group with the following rules:
 - Custom TCP: Port `2456-2458`
 - Custom UDP: Port `2456-2458`
 - SSH: TCP `Port 22` open to my IP
-git 
-For the 
+
+For docker image in the server, I'm using the image of [mbround18](https://hub.docker.com/r/mbround18/valheim). The container has been running smoothly without issues. 
+
+Below is the docker-compose configuration, which is also available in my GitHub [valheim-install.tftpl](https://github.com/ehoang0106/terraform-valheim-server/blob/master/terraform/valheim-install.tftpl)
+
+```docker
+version: "3"
+services:
+  valheim:
+    image: mbround18/valheim:latest
+    ports:
+      - 2456:2456/udp
+      - 2457:2457/udp
+      - 2458:2458/udp
+    environment:
+      PORT: 2456
+      NAME: "lazyValheim"
+      WORLD: "lazyValheim"
+      PASSWORD: "${password}"
+      TZ: "America/Los_Angeles"
+      PUBLIC: 1
+    volumes:
+      - ./valheim/saves:/home/steam/.config/unity3d/IronGate/Valheim
+      - ./valheim/server:/home/steam/valheim
+
+```
+
+I also set up a Discord bot hosted on a Raspberry Pi running Ubuntu Server. 
+This bot operates as a service in the background, ensuring it’s always active and responsive to commands. 
+
+With the command `!up`, the bot initiates the EC2 instance hosting the Valheim server and responds with the server's IP address.
+
+When the session is over, the `!down` command shuts down the instance when needed beside the CloudWatch setup to automatically turn off the server if there is no connection. 
+
+This bot-based control lets me manage the server remotely without needing to log into the AWS console. You can also check it out at my [GitHub](https://github.com/ehoang0106/terraform-valheim-server/tree/master/discord_bot).
+
