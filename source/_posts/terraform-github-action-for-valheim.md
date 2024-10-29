@@ -93,3 +93,8 @@ I also set up a SNS Topic to notify me when the server is stopping.
 In case you're wondering why there's an S3 bucket, it's used to store the `tfstate` file as specified in [provider.tf](https://github.com/ehoang0106/terraform-valheim-server/blob/master/terraform/provider.tf)
 
 For the full code setup and instruction, please check out my [GitHub Repository](https://github.com/ehoang0106/terraform-valheim-server)
+
+There’s no perfect—just ask my burnt cookies! Here’s what I’ll improve next time:
+
+- Utilize `Ansible` to automate the deployment of a Docker image instead of manually accessing the server to install it.
+- If `Ansible` is not an option, `AWS ECS` is the best alternative.
