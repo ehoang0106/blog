@@ -61,6 +61,8 @@ With the command `!up`, the bot initiates the EC2 instance hosting the Valheim s
 
 When the session is over, the `!down` command shuts down the instance when needed beside the CloudWatch setup to automatically turn off the server if there is no connection. 
 
+This bot-based control lets me manage the server remotely without needing to log into the AWS console.
+
 ![image](https://blog.khoah.net/media/terraform-github-action-for-valheim/discord_sc.png)
 
 Here is an example of a CloudWatch setup to monitor `NetworkPacketsIn` over a 5-minute period with a threshold of `300`.
@@ -84,7 +86,9 @@ alarm_actions       = ["arn:aws:automate:us-west-1:ec2:stop"]
 }
 ```
 
-This bot-based control lets me manage the server remotely without needing to log into the AWS console.
+I also set up a SNS Topic to notify me when the server is stopping.
+
+![image](https://blog.khoah.net/media/terraform-github-action-for-valheim/sns-noti.png)
 
 In case you're wondering why there's an S3 bucket, it's used to store the `tfstate` file as specified in [provider.tf](https://github.com/ehoang0106/terraform-valheim-server/blob/master/terraform/provider.tf)
 
