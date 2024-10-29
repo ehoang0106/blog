@@ -16,7 +16,7 @@ Since the game is very light, a T3 medium instance is sufficient. Here are the f
 - AMI: `Ubuntu Server 24.04 LTS (HVM)`
 - Instance type: `t3.medium`
 - VPC: `Default`
-- Storage: `8 GB`
+- Storage: `gp3` `8 GB`
 
 
 A security group with the following rules:
