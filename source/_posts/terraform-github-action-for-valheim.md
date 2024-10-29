@@ -26,7 +26,7 @@ A security group with the following rules:
 
 You can check out the graph below for the full setup:
 
-![image](https://blog.khoah.net/media/terraform-github-action-for-valheim/graph.png)
+![image](https://blog.khoah.net/media/terraform-github-action-for-valheim/graph-new.png)
 
 For docker image in the server, I'm using the image of [mbround18](https://hub.docker.com/r/mbround18/valheim). The container has been running smoothly without issues. 
 
