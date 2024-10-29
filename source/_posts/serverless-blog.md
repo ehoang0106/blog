@@ -2,7 +2,7 @@
 title: Serverless Blog
 date: 2024-10-07 14:43:13
 tags: serverless
-categories: aws
+categories: AWS
 ---
 
 ![image](https://s3.amazonaws.com/blog.khoah.net/images/serverless.jpg)

@@ -7,7 +7,7 @@ tags:
 - s3
 - lambda
 - api
-categories: aws
+categories: AWS
 ---
 
 ![image](https://blog.khoah.net/images/sns.jpg)
