@@ -7,7 +7,8 @@ tags:
 - raspberry pi
 - ec2
 - s3
-
+- sns
+categories: AWS
 ---
 ![image](https://blog.khoah.net/media/terraform-github-action-for-valheim/valheim-cover-new.jpg)
 I love playing survival games, and Valheim is the best one I've ever played. Developed by Iron Gate, Valheim is a survival sandbox game set in a stunning, Norse-inspired world. Players take on the role of a Viking warrior, exploring, crafting, and building to prove themselves to the gods, all while being under 1 GB in size.
