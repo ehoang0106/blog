@@ -86,7 +86,7 @@ alarm_actions       = ["arn:aws:automate:us-west-1:ec2:stop"]
 }
 ```
 
-I also set up a SNS Topic to notify me when the server is stopping.
+I also set up a SNS Topic to notify me when the CloudWatch alarm is triggering to stop the instance.
 
 ![image](https://blog.khoah.net/media/terraform-github-action-for-valheim/sns-noti.png)
 
