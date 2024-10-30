@@ -1,6 +1,6 @@
-name: Push code to khoahoang.dev
+name: Push code to blog.khoah.net S3 bucket
 
-# Trigger when push code to master branch
+#trigger when push code to master branch
 on:
   push:
     branches:
@@ -8,8 +8,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  Deploy-to-S3: # Name of the job
-    runs-on: ubuntu-latest # Run on ubuntu latest server
+  Deploy-to-S3: #name of the job
+    runs-on: ubuntu-latest
 
     steps:
       # Configure AWS Credentials
@@ -25,28 +25,26 @@ jobs:
           echo "aws_secret_access_key=${AWS_SECRET_ACCESS_KEY}" >> ~/.aws/credentials
           echo "region=${AWS_DEFAULT_REGION}" >> ~/.aws/credentials
 
-      # Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Install Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
 
-      # Install Hexo
+      #install Hexo
       - name: Install Hexo
         run: |
           npm install hexo-cli -g 
           npm install 
 
-      # Generate files
+      #use hexo to enerate files
       - name: Generate files from markdown file using hexo
         run: |
           hexo generate
 
-      # Sync the public folder to S3
+      #sync the public folder to S3
       - name: Sync public folder to S3 bucket blog.khoah.net
         run: |
           aws s3 sync ./public/ s3://blog.khoah.net
