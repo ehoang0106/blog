@@ -5,7 +5,7 @@
 # Link to a page that gives an overview of all your projects.
 # This can be an external link (e.g., to you GitHub profile) or to another
 # page within your website.
-projects_url: github.com/ehoang0106
+projects_url: https://github.com/ehoang0106
 
 # Set the page direction to RTL or LTR. default is LTR. (if you set it 'rtl', the 'vazir' font will be loaded.)
 direction: ltr
@@ -16,7 +16,6 @@ direction: ltr
 nav:
   home: /
   about: /about/
-
 
 
 
@@ -49,7 +48,6 @@ tags_overview: false
 #   - sort_updated: sort posts by last modification date instead of creation date.
 posts_overview:
   show_all_posts: true
-  post_count: 5
   sort_updated: false
 
 # Customize the archive view.
@@ -123,7 +121,7 @@ favicon:
 
 # The color scheme that should be used to highlight codeblocks.
 # See source/css/_highlight for a list of all available color schemes.
-# highlight: rainbow
+#highlight: darkula
 
 # Set the color scheme.
 # Available color schemes are 'dark', 'light', 'classic' and 'white'.
@@ -139,7 +137,7 @@ page_width: 48
 ##############################################################################
 
 # Enable or disable the RSS feed.
-rss: true
+rss:
 
 feed:
     limit: 20
@@ -226,3 +224,5 @@ cdn:
   font_awesome: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
   justified_gallery_css: https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css
   justified_gallery_js: https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js
+
+
