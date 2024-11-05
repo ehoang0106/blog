@@ -15,9 +15,6 @@ I love playing survival games, and Valheim is the best one I've ever played. Dev
 
 With a mix of exploration, combat, and resource management, I decided to host a server to invite my friend, making it an even more thrilling adventure.
 
-Because the game very light, a t3 medium instance is enough, here is full specs of the instance:
-
-
 Since the game is very light, a T3 medium instance is sufficient. Here are the full specifications of the instance:
 
 - AMI: `Ubuntu Server 24.04 LTS (HVM)`
@@ -30,6 +27,8 @@ A security group with the following rules:
 - Custom TCP: Port `2456-2458`
 - Custom UDP: Port `2456-2458`
 - SSH: TCP `Port 22` open to my IP
+
+One challenge was configuring security group rules. Initially, the server was inaccessible due to incorrect port settings. Opening TCP and UDP ports 2456-2458 resolved the issue, allowing players to connect.
 
 You can check out the graph below for the full setup:
 
@@ -93,7 +92,7 @@ alarm_actions       = ["arn:aws:automate:us-west-1:ec2:stop"]
 }
 ```
 
-I also set up a SNS Topic to notify me when the CloudWatch alarm is triggering to stop the instance.
+I set up an SNS Topic to notify me when the CloudWatch alarm triggers to stop the instance. Initially, there were permission issues, but adjusting the IAM policies resolved them.
 
 ![image](https://blog.khoah.net/media/terraform-github-action-for-valheim/sns-noti.png)
 
@@ -104,4 +103,4 @@ For the full code setup and instruction, please check out my [GitHub Repository]
 There’s no perfect—just ask my burnt cookies! Here’s what I’ll improve next time:
 
 - Utilize `Ansible` to automate the deployment of a Docker image instead of manually accessing the server to install it.
-- If `Ansible` is not an option, `AWS ECS` is the best alternative.
+- In the previous post, I promised to set up OIDC for the GitHub Action and AWS, I will cover this in the next post.
