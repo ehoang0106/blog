@@ -103,4 +103,4 @@ For the full code setup and instruction, please check out my [GitHub Repository]
 There’s no perfect—just ask my burnt cookies! Here’s what I’ll improve next time:
 
 - Utilize `Ansible` to automate the deployment of a Docker image instead of manually accessing the server to install it.
-- In the previous post, I promised to set up OIDC for the GitHub Action and AWS, I will cover this in the next post.
+- In the previous post, I promised to set up OIDC for the GitHub Action and AWS but I did not complete it. I will cover this in the next post.
