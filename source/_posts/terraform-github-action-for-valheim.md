@@ -100,7 +100,7 @@ In case you're wondering why there's an S3 bucket, it's used to store the `tfsta
 
 For the full code setup and instruction, please check out my [GitHub Repository](https://github.com/ehoang0106/terraform-valheim-server)
 
-There’s no perfect—just ask my burnt cookies! Here’s what I’ll improve next time:
+I'm really happy with how this server is performing. However, I’m looking forward to making some improvements next time:
 
 - Utilize `Ansible` to automate the deployment of a Docker image instead of manually accessing the server to install it.
 - In the previous post, I promised to set up OIDC for the GitHub Action and AWS but I did not complete it. I will cover this in the next post.
