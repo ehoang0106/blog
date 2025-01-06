@@ -3,5 +3,10 @@
         "name": "Valheim Server",
         "url": "https://github.com/ehoang0106/terraform-valheim-server",
         "desc": "Automating Valheim server deployment with Terraform"
+    },
+    {
+        "name": "Gas Price Tracking",
+        "url": "",
+        "desc": "Tracking local gas prices with Python"
     }
 ]
