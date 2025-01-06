@@ -14,22 +14,23 @@ It's been a while since my last post, and I hope you haven't forgotten me. After
 
 Here's how it works:
 - I host a bot on my Raspberry Pi to save money.
-- Every 24 hours, the bot spins up a Chrome driver to crawl data from Google.
-- Once the results are returned, the bot writes the data to DynamoDB and then returns the results in the chat.
+- [Terraform](https://blog.khoah.net/tags/terraform/) helps me spin up the database by using DynamoDB.
+- Every 24 hours, the bot will get data from Google.
+- The bot then writes the data to DynamoDB and returns the results in the chat.
 
-Since this is a budget project, I use web scraping to gather data from Google instead of paying for their API. It's been 3 months now, and the code is still working great! If you're interested in the code, you can access it here.
+Since this is a budget project, I use web scraping to gather data from Google instead of paying for their API. It's been 3 months now, and the code is still working great! If you're interested in the code, you can access it [here](https://github.com/ehoang0106/gas-price).
 
-*Please note that I specific the Chevron gas station because they offer the best quality gas in the city. You can adjust it in the code if needed.*
+*Please note that I specifically track Chevron gas stations because they offer the best quality gas in the city.*
 
-This is a result is returned from the bot. When giving them a command.
+Here is an example of the bot's response when given a command:
 
 ![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/gas/gas1.png)
 
-And this is a data in my DynamoDB.
+And here is the data stored in my DynamoDB:
 
 ![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/gas/gas2.png)
 
-As promised, I also configured OpenID Connect (OIDC) within my workflows to authenticate with AWS. You can follow this document on GitHub to configure your setup, but here is an example from my workflow files:
+As promised, I also configured OpenID Connect (OIDC) within my workflows to authenticate with AWS. You can follow this [document](https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services) on GitHub to configure your setup, but here is an example from my workflow files:
 ```
 permissions:
   contents: read # This is required for actions/checkout
@@ -42,3 +43,10 @@ permissions:
           role-session-name: 'GH_TO_AWS-VIA-OIDC'
           aws-region: us-west-1
 ```
+
+Even though this is just a small project, it took a lot of time to debug the data scraping from Google. I had to go through every single element on their website to determine the correct class and collect the data. However, it was very fun and helped me practice Terraform and learn how to use DynamoDB, as this was my first time using it.
+
+In the future, if I have the opportunity to access data from the Google API, I will use it instead of web scraping to ensure the code remains stable.
+Additionally, I could visualize the data by creating graphs or importing it into PowerBI for a better graphical experience.
+
+Hopefully you like the post, see you in the next one.
