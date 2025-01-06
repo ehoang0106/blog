@@ -21,10 +21,13 @@ Since this is a budget project, I use web scraping to gather data from Google in
 
 *Please note that I specific the Chevron gas station because they offer the best quality gas in the city. You can adjust it in the code if needed.*
 
-This is a result is returned from the bot.
+This is a result is returned from the bot. When giving them a command.
+
+![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/gas/gas1.png)
 
 And this is a data in my DynamoDB.
 
+![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/gas/gas2.png)
 
 As promised, I also configured OpenID Connect (OIDC) within my workflows to authenticate with AWS. You can follow this document on GitHub to configure your setup, but here is an example from my workflow files:
 ```
