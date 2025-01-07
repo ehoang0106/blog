@@ -10,7 +10,6 @@ tags:
 
 ![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/gas/gas-cover.webp)
 
-Hi everyone,
 It's been a while since my last post, and I hope you haven't forgotten me. After getting frustrated with the fluctuating gas prices in California, I decided to use a Discord bot and DynamoDB to create a database. This allows me to analyze the data and determine the lowest gas prices of the week, so I can plan the best time to fuel up my car.
 
 Here's how it works:
