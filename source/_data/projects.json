@@ -7,6 +7,6 @@
     {
         "name": "Gas Price Tracking",
         "url": "",
-        "desc": "Tracking local gas prices with Python"
+        "desc": "Tracking local gas prices with Discord bot"
     }
 ]
