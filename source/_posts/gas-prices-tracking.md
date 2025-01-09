@@ -1,7 +1,8 @@
 ---
-title: Tracking Gas Prices with AWS DynamoDB, Terraform, GitHub - AWS OIDC Configuration, and Discord Bot
+title: Tracking Gas Prices with Python Web Scraping, AWS DynamoDB, and Discord
 date: 2025-01-06 14:48:34
 tags: 
+- AWS
 - dynamodb
 - terraform
 - OIDC
