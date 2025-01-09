@@ -8,7 +8,7 @@ tags:
 - raspberry pi
 ---
 
-![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/gas/gas-cover.webp)
+![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/gas/cover.webp)
 
 It's been a while since my last post, and I hope you haven't forgotten me. After getting frustrated with the fluctuating gas prices in California, I decided to use a Discord bot and DynamoDB to create a database. This allows me to analyze the data and determine the lowest gas prices of the week, so I can plan the best time to fuel up my car.
 
@@ -18,9 +18,14 @@ Here's how it works:
 - Every 24 hours, the bot will get data from Google.
 - The bot then writes the data to DynamoDB and returns the results in the chat.
 
+You can take a look at the setup below:
+
+![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/gas/gas-chart.jpg)
+
 Since this is a budget project, I use web scraping to gather data from Google instead of paying for their API. It's been 3 months now, and the code is still working great! If you're interested in the code, you can access it [here](https://github.com/ehoang0106/gas-price).
 
 *Please note that I specifically track Chevron gas stations because they offer the best quality gas in the city.*
+
 
 Here is an example of the bot's response when given a command:
 
@@ -28,7 +33,7 @@ Here is an example of the bot's response when given a command:
 
 And here is the data stored in my DynamoDB:
 
-![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/gas/gas2.png)
+![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/gas/db.jpg)
 
 As promised, I also configured OpenID Connect (OIDC) within my workflows to authenticate with AWS. OIDC is a secure way to authenticate without exposing tokens or secret access keys. Instead, it uses a trusted role directly in AWS, which enhances security and simplifies the authentication process.
 
@@ -36,7 +41,7 @@ Here's a deeper dive into the setup:
 
 1. **Create an OIDC Provider in AWS**: This allows AWS to trust the identity provider (in this case, GitHub Actions).
 2. **Define a Role in AWS**: Create a role that can be assumed by the OIDC provider. This role will have the necessary permissions for your workflow.
-3. **Configure GitHub Actions**: Update your GitHub Actions workflow to request a JSON Web Token (JWT) from the OIDC provider and use it to assume the role in AWS.
+3. **Configure GitHub Actions**: Update GitHub Actions workflow to request a JSON Web Token (JWT) from the OIDC provider and use it to assume the role in AWS.
 
 You can follow this [document](https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services) on GitHub to configure your setup, but here is an example from my workflow files:
 
