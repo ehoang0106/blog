@@ -2,11 +2,11 @@
 title: Tracking Gas Prices with Python Web Scraping, AWS DynamoDB, and Discord
 date: 2025-01-06 14:48:34
 tags: 
-- AWS
 - dynamodb
 - terraform
 - OIDC
 - raspberry pi
+categories: AWS
 ---
 
 ![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/gas/cover.webp)
