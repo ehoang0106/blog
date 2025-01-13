@@ -6,7 +6,7 @@
     },
     {
         "name": "Gas Price Tracking",
-        "url": "https://blog.khoah.net/01/2025/06/gas/",
-        "desc": "Tracking local gas prices with Discord bot"
+        "url": "https://blog.khoah.net/01/2025/06/gas-prices-tracking/",
+        "desc": "Tracking local gas prices with Python Web Scraping"
     }
 ]
