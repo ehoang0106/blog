@@ -21,5 +21,16 @@ Here are the price comparisons when using a VPN to simulate locations in Sydney 
 
 US:
 
+![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/vpn-blog/bk-us2.png)
+
 AU:
 
+![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/vpn-blog/bk-au1.jpg)
+
+US:
+
+![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/vpn-blog/bk-au2-1.png)
+
+AU: 
+
+![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/vpn-blog/bk-us1-1.png)
