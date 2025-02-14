@@ -17,6 +17,13 @@ I chose the `ap-southeast-2` region (Sydney) for my instance, which is in Austra
 
 Terraform greatly simplifies the process of spinning up the infrastructure as code. You can check out my code on my GitHub Repo [here](https://github.com/ehoang0106/vpn).
 
+Here are some screenshots of the server's web page:
+
+![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/vpn-blog/vpn-3.jpg)
+
+![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/vpn-blog/vpn-4.jpg)
+
+
 Below are the price comparisons when using a VPN to simulate locations in Sydney and the US.
 Surprisingly, the price in US is better than the price in Australia for some reason. All the prices are in USD.
 
