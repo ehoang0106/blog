@@ -20,11 +20,11 @@ Terraform greatly simplifies the process of spinning up the infrastructure as co
 Below are the price comparisons when using a VPN to simulate locations in Sydney and the US.
 Surprisingly, the price in US is better than the price in Australia for some reason. All the prices are in USD.
 
-AU:
+US:
 
 ![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/vpn-blog/bk-au2-1.png)
 
-US: 
+AU: 
 
 ![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/vpn-blog/bk-us1-1.png)
 
