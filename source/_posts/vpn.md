@@ -1,5 +1,6 @@
 ---
 title: Create my own VPN with Terraform, AWS, and OpenVPN
+date: 2025-02-14 14:48:34
 tags:
 - ec2
 - terraform
