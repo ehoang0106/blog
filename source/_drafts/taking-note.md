@@ -1,6 +1,6 @@
 ---
 title: How I Take Notes and Why It Matters
-date: 02-26-2025 14:44:30
+date: 03-01-2025 14:44:30
 tags:
 ---
 
