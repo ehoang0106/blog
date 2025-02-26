@@ -59,6 +59,18 @@ RustDesk’s self-hosted setup requires two executables: `hbbs` and `hbbr`.
 Here is an illustrations of how RustDesk client communicates with hbbr/hbbs from [RustDesk documentation](https://github.com/rustdesk/rustdesk/wiki/How-does-RustDesk-work%3F):
 ![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/remote-desktop/hbbs-hbbr.png)
 
+## Demo
+Once `hbbs` is up and running, it will automatically generate a pair of encrypted private and public keys (`id_ed25519` and `id_ed25519.pub`). These keys are primarily used for communication encryption. The public key will be used for authorization when connecting to the server.
+
+![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/remote-desktop/rd4.png)
+The connection between RustDesk remote and RustDesk client are encrypted.
+
+![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/remote-desktop/rd5.png)
+Using RustDesk on smartphone.
+
+![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/remote-desktop/rd3.png)
+
+
 ## Encountered issues
 While setting up Ansible, I ran into issues with defining the correct host IP for the RustDesk server and bypassing SSH known hosts verification, which blocked provisioning. 
 
