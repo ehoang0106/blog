@@ -23,9 +23,7 @@ Setting up RustDesk is kinda simple and hassle-free.
 
 I have two instances running simultaneously - One serves as the Ansible control node, managing the second server, the other runs two Docker containers.
 
-I used terraform to build my infrastructure on AWS. There is a VPC contains 2 subnet. Each subnet has a instance with a needed security group open required port as well as a network acl and internet gateway. 
-
-Terraform helps me 
+Terraform helps me build the infrastructure on AWS while Ansible helps me install docker containers and configure the `ufw` on the `rustdesk server` by using `ansible playbook`.
 
 The reason for having 2 containers is RustDesk self-hosted required 2 executable called `hbbs` and `hbbr`
 
@@ -35,6 +33,7 @@ The reason for having 2 containers is RustDesk self-hosted required 2 executable
 Here is illustrations of how RustDesk client communicates with hbbr/hbbs
 
 ![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/remote-desktop/hbbs-hbbr.png)
+
 
 
 
