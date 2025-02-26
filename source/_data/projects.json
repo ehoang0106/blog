@@ -8,5 +8,15 @@
         "name": "Gas Price Tracking",
         "url": "https://blog.khoah.net/01/2025/06/gas-prices-tracking/",
         "desc": "Tracking local gas prices with Python Web Scraping"
+    },
+    {
+        "name": "Host a Remote Desktop Server",
+        "url": "https://github.com/ehoang0106/rustdesk",
+        "desc": "Build my own Remote Desktop Server with RustDesk"
+    },
+    {
+        "name": "Create my own VPN",
+        "url": "https://blog.khoah.net/02/2025/14/vpn/",
+        "desc": "Create my own VPN for price searching"
     }
 ]
