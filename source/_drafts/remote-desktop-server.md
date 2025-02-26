@@ -59,15 +59,15 @@ The reason for having 2 containers is RustDesk self-hosted required 2 executable
 Here is illustrations of how RustDesk client communicates with hbbr/hbbs from [RustDesk](https://github.com/rustdesk/rustdesk/wiki/How-does-RustDesk-work%3F):
 ![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/remote-desktop/hbbs-hbbr.png)
 
-## Encountered issues:
+## Encountered issues
 While setting up Ansible, I ran into issues with defining the correct host IP for the RustDesk server and bypassing SSH known hosts verification, which blocked provisioning. 
 
 I also faced permission errors due to missing sudo privileges. After tweaking the Ansible inventory and SSH settings, I got everything working—turning these hurdles into valuable learning experiences.
 
 
-## Improvements:
-- Use ECS for Container Management – Running RustDesk on AWS ECS would simplify deployment and scaling.
-- Automate SSH Key Setup – Automating keypair configuration with Terraform & AWS System Manager Agent (AWS SSM) would eliminate manual setup.
+## Improvements
+- Use ECS Container Management or Kubernetes – Running RustDesk on these setup would simplify deployment and scaling.
+- Automate SSH Key Setup – Automating keypair configuration with Terraform & AWS System Manager Agent (AWS SSM) would eliminate manual setup since Ansible is not a correct solution.
 - Enable Auto-Healing & Scaling – Adding Auto Scaling & Health Checks would improve reliability by automatically recovering from failures.
 
 
