@@ -29,6 +29,10 @@ I use my notes to review and reinforce my knowledge. In the past, my structured 
 ### 4. Collaboration and Documentation
 Good notes allow me to share knowledge with others, whether through blog posts, documentation, or team discussions. This improves efficiency and reduces redundant problem-solving.
 
+You can learn more about the benefits of note-taking by watching this YouTube video:
+
+<iframe width="720" height="315" src="https://www.youtube.com/embed/Xw3SkhB4dMk?si=IwoK-ngdcd7V5lNd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## My Note-Taking Workflow in Obsidian
 
 [Obsidian](https://obsidian.md/) is my go-to tool. It operates on markdown files, offers a flexible and powerful way to manage notes. 
