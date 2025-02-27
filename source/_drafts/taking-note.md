@@ -2,6 +2,11 @@
 title: How I Take Notes and Why It Matters
 date: 03-01-2025 14:44:30
 tags:
+- note
+- obsidian
+
+categories:
+- miscellaneous
 ---
 
 Taking effective notes is an essential skill in tech, whether for coding or general knowledge retention. I take note-taking seriously because it helps me organize my thoughts, track progress, and document solutions for future reference. In this post, I'll share my approach to note-taking and how I use [Obsidian](https://obsidian.md/) to streamline my workflow.
