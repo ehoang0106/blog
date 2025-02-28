@@ -13,6 +13,7 @@ Taking effective notes is an essential skill in tech, whether for coding or gene
 
 ![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/taking-note/gif.gif)
 
+--- 
 
 ## Why I Take Notes
 
@@ -20,6 +21,7 @@ Taking effective notes is an essential skill in tech, whether for coding or gene
 Technical concepts can be complex, and it's easy to forget details over time. Writing things down helps reinforce my understanding and makes it easier to recall information when needed.
 
 ![img](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/taking-note/tk-1.png)
+
 
 ### 2. Efficient Problem-Solving
 When troubleshooting issues in coding or reviewing knowledge, past notes act as a personal knowledge base. Instead of searching for solutions online repeatedly, I refer to my own documented experiences.
@@ -37,6 +39,7 @@ Good notes allow me to share knowledge with others, whether through blog posts, 
 You can learn more about the benefits of note-taking by watching this YouTube video:
 
 <iframe width="720" height="315" src="https://www.youtube.com/embed/Xw3SkhB4dMk?si=IwoK-ngdcd7V5lNd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 ## My Note-Taking Workflow in Obsidian
 
@@ -72,6 +75,8 @@ One of Obsidian’s strengths is its ability to create connections between notes
 
 ### 4. **Syncing and Backup**
 To ensure I never lose my notes, I regularly back them up to my private Git repository and restore them as needed.
+
+---
 
 ## My Thoughts
 
