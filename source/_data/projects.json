@@ -1,5 +1,15 @@
 [
     {
+        "name": "SSH to my Raspberry Pi from anywhere",
+        "url": "https://github.com/ehoang0106/pi-tunnel",
+        "desc": "SSH to Raspberry Pi using Cloudflared Tunnel"
+    },
+    {
+        "name": "Host a Remote Desktop Server",
+        "url": "https://github.com/ehoang0106/rustdesk",
+        "desc": "Build my own Remote Desktop Server with RustDesk"
+    },
+    {
         "name": "Valheim Server",
         "url": "https://github.com/ehoang0106/terraform-valheim-server",
         "desc": "Automating Valheim server deployment with Terraform"
@@ -8,11 +18,6 @@
         "name": "Gas Price Tracking",
         "url": "https://blog.khoah.net/01/2025/06/gas-prices-tracking/",
         "desc": "Tracking local gas prices with Python Web Scraping"
-    },
-    {
-        "name": "Host a Remote Desktop Server",
-        "url": "https://github.com/ehoang0106/rustdesk",
-        "desc": "Build my own Remote Desktop Server with RustDesk"
     },
     {
         "name": "Create my own VPN",
