@@ -10,7 +10,7 @@ tags:
 
 ![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/wazuh/wz-cover.png)
 
-Cybersecurity isn't just for enterprises - it's essential for home labs and personal IT setup too. I found Wazuh - a powerful an open-source SEIM and XDR platform that provides threat detection, log analysis, and system monitoring.
+Cybersecurity isn't just for enterprises - it's essential for home labs and personal IT setup too. I found Wazuh - a powerful open-source SEIM and XDR platform that provides threat detection, log analysis, and system monitoring.
 
 So I decided to setup Wazuh at home, using my Raspberry Pi to host the server, and deploying agents to my devices.
 
