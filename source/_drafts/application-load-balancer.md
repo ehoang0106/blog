@@ -24,10 +24,11 @@ My architecture follows the recommended AWS best practices, including:
 
 Here's what our infrastructure looks like:
 
+![img](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/load-balancing/diagram-2.png)
+
 ## How It Works
 
 Here's how the system handles different scenarios:
-
 ### Normal Operation
 
 1. Users access web.khoah.net
@@ -52,7 +53,7 @@ Here's how the system handles different scenarios:
 ## Cost Optimization
 
 The architecture is designed to be cost-effective:
-- t2.micro instances balance cost and performance
+- `t2.micro` instances balance cost and performance
 - Auto-scaling ensures you only pay for what you need
 - Multi-AZ deployment provides high availability with minimal resources
 
