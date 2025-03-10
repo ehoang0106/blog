@@ -67,6 +67,29 @@ Even the content of the file.
 
 ![image](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/wazuh/wh-+(3).png)
 
+Wazuh’s dashboard gives a clear view of security information:
+
+![img](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/wazuh/wz-3.png)
+
+![img](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/wazuh/wz-4.png)
+
+If your system stores sensitive data like user credentials or credit card info, staying compliant with security standards is crucial. Wazuh will scan your infrastructure and checking if it meets key compliance requirements using frameworks like:
+
+- PCI DSS – Ensures credit card data is handled securely.
+
+- GDPR – Keeps personal data safe and compliant with EU regulations.
+
+- HIPAA – Protects healthcare information.
+
+- NIST, CIS, and more – Covers a wide range of security policies.
+
+It continuously scans for vulnerabilities and misconfigurations, helping you point out the issues before they become problems.
+
+![img](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/wazuh/wz-5.png)
+
+
+
+
 ---
 
 ## Challenges Encountered
