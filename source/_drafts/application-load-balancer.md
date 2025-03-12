@@ -70,6 +70,7 @@ I also hit an issue configuring a CloudWatch Alarm for a Lambda trigger. The Rou
 
 ## Improvements
 In the real-world, there are a lot of things that need to be added to a web application to make it perform better, but here are the things I should consider:
+- Multi region Active-Active Architecture: Same concept but the secondary region always up
 - WAF integration for additional security
 - CloudFront for global edge caching
 - Private subnets for the application tier
