@@ -20,7 +20,9 @@ My architecture follows the recommended AWS best practices, including:
 2. **Auto Scaling Groups** in each region to handle traffic fluctuations
 3. **Application Load Balancers** to distribute traffic
 4. **Route53 DNS Failover** for automatic cross-region recovery
-5. **Health checks** to detect and respond to failures
+5. **Health checks** to detect and respond to failure
+
+To reduce expenses, I omitted the database from this project. The diagram shows my complete setup minus the database.
 
 ![img](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/load-balancing/diagram-2.png)
 
@@ -59,9 +61,9 @@ The architecture is designed to be cost-effective:
 
 ## Encountered Issues
 
-While setting up auto scaling with Terraform, I ran into an issue where the auto scaling group wasn't created as expected. After hours of troubleshooting, I realized the problem was that I referenced the security group as its `name` instead of using its `id` `(security_groups = [aws_security_group.my_sg.id])`. 
+While setting up auto scaling with Terraform, I spent hours troubleshooting why the auto scaling group wasn’t created—only to realize I had referenced the security group by name instead of id (security_groups = [aws_security_group.my_sg.id]).
 
-Once corrected, the auto scaling group still didn't create properly until I added `depends_on` to ensure the security group was fully created first. This experience highlighted the importance of referencing resources correctly and using `depends_on` to manage dependencies.
+I also hit an issue configuring a CloudWatch Alarm for a Lambda trigger. The Route 53 Health Check metric is only in `us-east-1`, and my `aws_cloudwatch_metric_alarm` failed until I explicitly set the provider in the CloudWatch configuration.
 
 ## Improvements
 
