@@ -24,14 +24,14 @@ My architecture follows the recommended AWS best practices, including:
 
 To reduce expenses, I omitted the database from this project. The diagram shows my complete setup minus the database.
 
-![img](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/load-balancing/diagram-2.png)
+![img](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/load-balancing/diagram.png)
 
 ## How It Works
 
 Here's how the system handles different scenarios:
 ### Normal Operation
 
-1. Users access web.khoah.net
+1. Users access the website, in this case is web.khoah.net
 2. Route53 routes traffic to ALB in the primary region (US West)
 3. The ALB distributes requests to healthy instances in the ASG
 4. ASG maintains the desired number of instances based on load
@@ -39,11 +39,10 @@ Here's how the system handles different scenarios:
 ### Primary Region Failure
 
 1. Health checks detect the primary region is unavailable
-2. CloudWatch Alarm triggers a Lambda function to spin up the secondary region (US East)
+2. CloudWatch Alarm triggers a Lambda function to spin up the secondary region (US East). It also trigger the SNS topic to send notification to me
 3. Route53 automatically routes traffic to the secondary region
 4. Users continue to access the application through the same URL
-5. When the primary region recovers, traffic fails back automatically
-6. After the primary region is recovered, the CloudWatch Alarm will turn off the secondary region to save cost
+5. When the primary region recovers, traffic fails back automatically, then the CloudWatch Alarm will turn off the secondary region to save cost
 
 ### Traffic Spike
 
@@ -61,7 +60,7 @@ The architecture is designed to be cost-effective:
 
 ## Encountered Issues
 
-Initially, I designed a system with two auto-scaling groups running simultaneously in two regions. However, I realized this was not cost-effective, so I redesigned it and have to right the terraform code again.
+Initially, I designed a system with two auto-scaling groups running simultaneously in two regions. However, I realized this was not cost-effective, so I redesigned it and have to write the terraform code again.
 
 Also while setting up auto scaling with Terraform, I spent hours troubleshooting why the auto scaling group wasn’t created—only to realize I had referenced the security group by name instead of id (`security_groups = [aws_security_group.my_sg.id]`).
 
@@ -70,7 +69,7 @@ Moreoever, "thanks to" a bug, when I enabled the IP address in the `launch templ
 I also hit an issue configuring a CloudWatch Alarm for a Lambda trigger. The Route 53 Health Check metric is only in `us-east-1`, and my `aws_cloudwatch_metric_alarm` failed until I explicitly set the correct provider in the CloudWatch configuration.
 
 ## Improvements
-
+In the real-world, there are a lot of things that need to be added to a web application to make it perform better, but here are the things I should consider:
 - WAF integration for additional security
 - CloudFront for global edge caching
 - Private subnets for the application tier
