@@ -74,6 +74,5 @@ I also hit an issue configuring a CloudWatch Alarm for a Lambda trigger. The Rou
 - WAF integration for additional security
 - CloudFront for global edge caching
 - Private subnets for the application tier
-- RDS for database storage with cross-region replication
 - Enhanced monitoring with CloudWatch dashboards
 
