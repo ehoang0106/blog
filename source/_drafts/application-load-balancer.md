@@ -21,8 +21,9 @@ My architecture follows the recommended AWS best practices, including:
 3. **Application Load Balancers** to distribute traffic
 4. **Route53 DNS Failover** for automatic cross-region recovery
 5. **Health checks** to detect and respond to failures
+6. **CloudWatch Alarm** to trigger a Lambda function that spins up the second region
 
-Here's what our infrastructure looks like:
+Here's what my infrastructure looks like:
 
 ![img](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/load-balancing/diagram-2.png)
 
@@ -39,9 +40,11 @@ Here's how the system handles different scenarios:
 ### Primary Region Failure
 
 1. Health checks detect the primary region is unavailable
-2. Route53 automatically routes traffic to the secondary region (US East)
-3. Users continue to access the application through the same URL
-4. When the primary region recovers, traffic fails back automatically
+2. CloudWatch Alarm triggers a Lambda function to spin up the secondary region (US East)
+3. Route53 automatically routes traffic to the secondary region
+4. Users continue to access the application through the same URL
+5. When the primary region recovers, traffic fails back automatically
+6. After the primary region is recovered, the CloudWatch Alarm will turn off the secondary region to save cost
 
 ### Traffic Spike
 
@@ -53,9 +56,9 @@ Here's how the system handles different scenarios:
 ## Cost Optimization
 
 The architecture is designed to be cost-effective:
-- `t2.micro` instances balance cost and performance
 - Auto-scaling ensures you only pay for what you need
 - Multi-AZ deployment provides high availability with minimal resources
+- Implementing CloudWatch Alarms and Lambda functions to manage secondary server activation based on primary region health
 
 ## Encountered Issues
 
