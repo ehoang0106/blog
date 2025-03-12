@@ -63,7 +63,9 @@ The architecture is designed to be cost-effective:
 
 Initially, I designed a system with two auto-scaling groups running simultaneously in two regions. However, I realized this was not cost-effective, so I redesigned it and have to right the terraform code again.
 
-Also while setting up auto scaling with Terraform, I spent hours troubleshooting why the auto scaling group wasn’t created—only to realize I had referenced the security group by name instead of id (security_groups = [aws_security_group.my_sg.id]).
+Also while setting up auto scaling with Terraform, I spent hours troubleshooting why the auto scaling group wasn’t created—only to realize I had referenced the security group by name instead of id (`security_groups = [aws_security_group.my_sg.id]`).
+
+Moreoever, "thanks to" a bug, when I enabled the IP address in the `launch template` for the instance in the Terraform code, it helped to remember that the network interface required a security group assignment. If you use the console to create the launch template, it will automatically select the default security group for you.
 
 I also hit an issue configuring a CloudWatch Alarm for a Lambda trigger. The Route 53 Health Check metric is only in `us-east-1`, and my `aws_cloudwatch_metric_alarm` failed until I explicitly set the correct provider in the CloudWatch configuration.
 
