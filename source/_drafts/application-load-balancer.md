@@ -16,11 +16,11 @@ As part of honing my Terraform skills, I developed a script to provision a highl
 ## Architecture Overview
 
 My architecture follows the recommended AWS best practices, including:
-1. **Multi-region deployment** - Primary in US West, Secondary in US East
-2. **Auto Scaling Groups** in each region to handle traffic fluctuations
-3. **Application Load Balancers** to distribute traffic
-4. **Route53 DNS Failover** for automatic cross-region recovery
-5. **Health checks** to detect and respond to failures
+1. **`Multi-region deployment`** - Primary in US West, Secondary in US East
+2. **`Auto Scaling Groups`** in each region to handle traffic fluctuations
+3. **`Application Load Balancers`** to distribute traffic
+4. **`Route53 DNS Failover`** for automatic cross-region recovery
+5. **`Health checks`** to detect and respond to failures
 
 Here's what our infrastructure looks like:
 
