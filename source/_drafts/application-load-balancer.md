@@ -21,9 +21,6 @@ My architecture follows the recommended AWS best practices, including:
 3. **Application Load Balancers** to distribute traffic
 4. **Route53 DNS Failover** for automatic cross-region recovery
 5. **Health checks** to detect and respond to failures
-6. **CloudWatch Alarm** to trigger a Lambda function that spins up the second region
-
-Here's what my infrastructure looks like:
 
 ![img](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/load-balancing/diagram-2.png)
 
