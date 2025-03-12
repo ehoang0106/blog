@@ -32,7 +32,7 @@ Here's how the system handles different scenarios:
 ### Normal Operation
 
 1. Users access web.khoah.net
-2. Route53 routes traffic to the primary region (US West)
+2. Route53 routes traffic to ALB in the primary region (US West)
 3. The ALB distributes requests to healthy instances in the ASG
 4. ASG maintains the desired number of instances based on load
 
@@ -61,9 +61,11 @@ The architecture is designed to be cost-effective:
 
 ## Encountered Issues
 
-While setting up auto scaling with Terraform, I spent hours troubleshooting why the auto scaling group wasn’t created—only to realize I had referenced the security group by name instead of id (security_groups = [aws_security_group.my_sg.id]).
+Initially, I designed a system with two auto-scaling groups running simultaneously in two regions. However, I realized this was not cost-effective, so I redesigned it and have to right the terraform code again.
 
-I also hit an issue configuring a CloudWatch Alarm for a Lambda trigger. The Route 53 Health Check metric is only in `us-east-1`, and my `aws_cloudwatch_metric_alarm` failed until I explicitly set the provider in the CloudWatch configuration.
+Also while setting up auto scaling with Terraform, I spent hours troubleshooting why the auto scaling group wasn’t created—only to realize I had referenced the security group by name instead of id (security_groups = [aws_security_group.my_sg.id]).
+
+I also hit an issue configuring a CloudWatch Alarm for a Lambda trigger. The Route 53 Health Check metric is only in `us-east-1`, and my `aws_cloudwatch_metric_alarm` failed until I explicitly set the correct provider in the CloudWatch configuration.
 
 ## Improvements
 
