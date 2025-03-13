@@ -58,6 +58,8 @@ The architecture is designed to be cost-effective:
 - Multi-AZ deployment provides high availability with minimal resources
 - Implementing CloudWatch Alarms and Lambda functions to manage secondary server activation based on primary region health
 
+For the full setup, you can check out my code [here](https://github.com/ehoang0106/multi-region-recovery-terraform).
+
 ## Encountered Issues
 
 Initially, I designed a system with two auto-scaling groups running simultaneously in two regions. However, I realized this was not cost-effective, so I redesigned it and have to write the terraform code again.
