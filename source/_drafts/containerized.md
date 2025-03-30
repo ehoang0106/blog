@@ -13,20 +13,6 @@ tags:
 - python
 - docker
 ---
-
----
-title: Building a Real-Time Currency Price Tracker with Python, Flask, and Selenium
-date: 2024-03-28 19:40:25
-tags:
-- python
-- flask
-- selenium
-- mysql
-- web-scraping
-categories:
-- Web Development
----
-
 As part of my journey in web development and data collection, I developed a real-time currency price tracking application that monitors prices from orbwatch.trade. This project combines web scraping, data storage, and visualization to create a useful tool for currency price monitoring.
 
 ## Architecture Overview
@@ -39,8 +25,6 @@ The application follows a modern web architecture:
 5. **Chart.js Visualization** - Interactive price charts for data analysis
 
 The system is designed to be maintainable, scalable, and user-friendly. Here's a diagram showing the complete setup:
-
-[You might want to add a diagram here showing the architecture]
 
 ## How It Works
 
@@ -122,4 +106,4 @@ Several enhancements could be made to improve the application:
 
 This project demonstrates the power of combining web scraping, data storage, and visualization to create a useful tool. The modular architecture allows for easy maintenance and future enhancements. The use of modern technologies like Docker ensures consistent deployment across different environments.
 
-For the complete implementation, you can check out my code [here](https://github.com/yourusername/RDS).
+For the complete implementation, you can check out my code [here](https://github.com/ehoang0106/RDS).
