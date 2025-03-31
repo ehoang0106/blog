@@ -24,7 +24,7 @@ The application follows a modern web architecture:
 4. **Docker Containerization** - Ensuring consistent deployment across environments
 5. **Chart.js Visualization** - Interactive price charts for data analysis
 
-The system is designed to be maintainable, scalable, and user-friendly. Here's a diagram showing the complete setup:
+Here's a diagram showing the complete setup:
 
 ## How It Works
 
