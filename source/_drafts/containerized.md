@@ -19,9 +19,9 @@ As part of my journey in web development and data collection, I developed a real
 
 The application follows a modern web architecture:
 1. **Flask Web Application** - Serving the frontend and API endpoints
-2. **Selenium Web Scraping** - Automated data collection from orbwatch.trade
-3. **MySQL Database** - Persistent storage for historical price data
-4. **Docker Containerization** - Ensuring consistent deployment across environments
+2. **Selenium Web Scraping** - Automated data collection from a website
+3. **MySQL Database (AWS RDS)** - Persistent storage for historical price data
+4. **Docker Containerization (AWS ECS)** - Ensuring consistent deployment across environments
 5. **Chart.js Visualization** - Interactive price charts for data analysis
 
 Here's a diagram showing the complete setup:
@@ -29,9 +29,9 @@ Here's a diagram showing the complete setup:
 ## How It Works
 
 ### Data Collection
-1. The application uses Selenium with Chrome in headless mode to scrape orbwatch.trade
+1. The application uses Selenium with Chromium in headless mode to scrape website
 2. BeautifulSoup4 parses the HTML to extract currency prices and related data
-3. Data is stored in MySQL with timestamps for historical tracking
+3. Data is stored in AWS RDS (MySQL) with timestamps for historical tracking
 4. The scraping process is optimized with proper wait conditions and error handling
 
 ### Data Presentation
@@ -39,13 +39,6 @@ Here's a diagram showing the complete setup:
 2. The frontend fetches the last 7 days of price data via REST API
 3. Chart.js renders interactive price charts
 4. Real-time updates are available through the update endpoint
-
-### Technical Implementation
-The application is containerized using Docker, which:
-- Ensures consistent environment across deployments
-- Handles Chrome and ChromeDriver dependencies
-- Manages Python package requirements
-- Exposes the application on port 80
 
 ## Key Features
 
