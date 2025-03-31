@@ -44,7 +44,6 @@ Here's a diagram showing the complete setup:
 
 1. **Automated Data Collection**
    - Headless browser automation with Selenium
-   - Robust error handling and connection management
    - Timezone-aware timestamp recording
 
 2. **Data Storage**
