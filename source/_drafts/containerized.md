@@ -1,6 +1,6 @@
 ---
 title: Containerized My Python Flask Web App with AWS ECS, RDS, and Terraform
-date: 2025-03-28 15:20:25
+date: 2025-03-28 15:30:25
 categories:
 - AWS
 tags:
