@@ -20,7 +20,7 @@ As part of my journey in web development and data collection, I developed a real
 The application follows a modern web architecture:
 1. **Flask Web Application** - Serving the frontend and API endpoints
 2. **Selenium Web Scraping** - Automated data collection from a website
-3. **MySQL Database (AWS RDS)** - Persistent storage for historical price data
+3. **AWS RDS (MySQL)** - Managed database service for persistent storage
 4. **Docker Containerization (AWS ECS)** - Ensuring consistent deployment across environments
 5. **Chart.js Visualization** - Interactive price charts for data analysis
 
@@ -31,7 +31,7 @@ Here's a diagram showing the complete setup:
 ### Data Collection
 1. The application uses Selenium with Chromium in headless mode to scrape website
 2. BeautifulSoup4 parses the HTML to extract currency prices and related data
-3. Data is stored in AWS RDS (MySQL) with timestamps for historical tracking
+3. Data is stored in AWS RDS MySQL instance with timestamps for historical tracking
 4. The scraping process is optimized with proper wait conditions and error handling
 
 ### Data Presentation
@@ -47,9 +47,10 @@ Here's a diagram showing the complete setup:
    - Timezone-aware timestamp recording
 
 2. **Data Storage**
-   - MySQL database for persistent storage
+   - AWS RDS MySQL for managed database service
    - Efficient table structure for price data
    - Automatic database and table creation
+   - Automated backups and maintenance
 
 3. **Web Interface**
    - Clean, responsive design
@@ -64,10 +65,11 @@ Here's a diagram showing the complete setup:
    - Resolved by using webdriver-manager for automatic driver management
    - Added necessary Chrome options for headless operation
 
-2. **Database Connection**
-   - Implemented proper connection pooling
+2. **AWS RDS Connection**
+   - Implemented proper connection pooling for RDS
    - Added error handling for database operations
    - Ensured proper connection closure
+   - Configured security groups for RDS access
 
 3. **Docker Setup**
    - Configured Chrome and ChromeDriver in the container
@@ -81,6 +83,7 @@ Several enhancements could be made to improve the application:
    - Implement caching for frequently accessed data
    - Add database indexing for faster queries
    - Optimize scraping frequency based on data volatility
+   - Consider RDS read replicas for better read performance
 
 2. **Feature Additions**
    - Add user authentication
@@ -93,9 +96,10 @@ Several enhancements could be made to improve the application:
    - Implement health checks
    - Set up automated backups
    - Add monitoring dashboard
+   - Configure RDS performance insights
 
 ## Conclusion
 
-This project demonstrates the power of combining web scraping, data storage, and visualization to create a useful tool. The modular architecture allows for easy maintenance and future enhancements. The use of modern technologies like Docker ensures consistent deployment across different environments.
+This project demonstrates the power of combining web scraping, AWS RDS for data storage, and visualization to create a useful tool. The modular architecture allows for easy maintenance and future enhancements. The use of modern technologies like Docker and AWS RDS ensures consistent deployment and reliable database management across different environments.
 
 For the complete implementation, you can check out my code [here](https://github.com/ehoang0106/RDS).
