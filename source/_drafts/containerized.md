@@ -112,8 +112,8 @@ After running the application on AWS for several months, I decided to migrate it
 
 1. **Migration Process**
    - Set up MariaDB on Raspberry Pi
-   - Configured Docker for ARM architecture
-   - Set up Cloudflare Tunnel for secure access
+   - Configured Docker
+   - Set up Cloudflare Tunnel
    - Migrated data from AWS RDS to local MariaDB
 
 2. **Cost Benefits**
