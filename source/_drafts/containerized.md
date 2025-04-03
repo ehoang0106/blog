@@ -42,6 +42,8 @@ Here's a diagram showing the setup:
 2. The frontend fetches the last 7 days of price data
 3. Chart.js renders interactive price charts
 
+![img](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/orbwatch/Screenshot+2025-04-03+151635.png)
+
 ## Key Features
 
 1. **Automated Data Collection**
