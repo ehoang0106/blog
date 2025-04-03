@@ -46,21 +46,6 @@ You can check out my website right here: [https://orb.khoah.com/](https://orb.kh
 
 ![img](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/orbwatch/Screenshot+2025-04-03+152238.png)
 
-## Key Features
-
-1. **Automated Data Collection**
-   - Headless browser automation with Selenium
-   - Timezone-aware timestamp recording
-
-2. **Data Storage**
-   - AWS RDS MySQL for managed database service
-   - Automatic database and table creation
-
-3. **Web Interface**
-   - Clean, responsive design
-   - Real-time price updates
-   - Historical data visualization
-
 ## AWS Infrastructure Setup
 
 1. **Container Management**
@@ -143,9 +128,5 @@ Several enhancements could be made to improve the application:
    - Set up automated backups
    - Add monitoring dashboard
    - Configure performance insights
-
-## Conclusion
-
-This project demonstrates the power of combining web scraping, data storage, and visualization to create a useful tool. The modular architecture allows for easy maintenance and future enhancements. The initial AWS deployment showcased the power of cloud services, while the migration to Raspberry Pi proved that powerful applications can run efficiently on cost-effective hardware. The use of modern technologies like Docker, AWS services, and Cloudflare Tunnel ensures consistent deployment and secure access across different environments.
 
 For the complete implementation, you can check out my code [here](https://github.com/ehoang0106/RDS).
