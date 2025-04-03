@@ -14,7 +14,7 @@ tags:
 - docker
 - raspberry-pi
 ---
-As part of my journey in web development and data collection, I developed a real-time currency price tracking application that monitors prices from orbwatch.trade. This project combines web scraping, data storage, and visualization to create a useful tool for currency price monitoring. Initially deployed on AWS, I later migrated the application to a Raspberry Pi to optimize costs while maintaining full functionality.
+As part of my journey in web development and data collection, I developed a real-time currency price tracking application that monitors prices. This project combines web scraping, data storage, and visualization to create a useful tool for currency price monitoring. Initially deployed on AWS, I later migrated the application to a Raspberry Pi to optimize costs while maintaining full functionality.
 
 ## Architecture Overview
 
@@ -25,9 +25,10 @@ The application follows a modern web architecture:
 4. **Docker Containerization (AWS ECS)** - Ensuring consistent deployment across environments
 5. **Chart.js Visualization** - Interactive price charts for data analysis
 6. **AWS Application Load Balancer** - Managing traffic distribution
-7. **Auto Scaling Group** - Ensuring application availability
 
-Here's a diagram showing the complete setup:
+Here's a diagram showing the setup:
+
+![img](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/orbwatch/diagram.png)
 
 ## How It Works
 
