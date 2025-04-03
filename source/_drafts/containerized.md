@@ -22,7 +22,7 @@ The application follows a modern web architecture:
 1. **Flask Web Application** - Serving the frontend and API endpoints
 2. **Selenium Web Scraping** - Automated data collection from a website
 3. **AWS RDS (MySQL)** - Managed database service for persistent storage
-4. **Docker Containerization (AWS ECS)** - Ensuring consistent deployment across environments
+4. **AWS ECS** - Running the application container
 5. **Chart.js Visualization** - Interactive price charts for data analysis
 6. **AWS Application Load Balancer** - Managing traffic distribution
 
@@ -33,16 +33,14 @@ Here's a diagram showing the setup:
 ## How It Works
 
 ### Data Collection
-1. The application uses Selenium with Chromium in headless mode to scrape website
-2. BeautifulSoup4 parses the HTML to extract currency prices and related data
-3. Data is stored in AWS RDS MySQL instance with timestamps for historical tracking
-4. The scraping process is optimized with proper wait conditions and error handling
+1. The application uses Selenium with Chromium in headless mode to scrape website (orbwatch.trade) every 12 hours
+   Users can get the real-time price by hitting `Update Data` button
+2. Data is stored in AWS RDS MySQL instance with timestamps for historical tracking
 
 ### Data Presentation
 1. Users access the web interface through the application load balancer
-2. The frontend fetches the last 7 days of price data via REST API
+2. The frontend fetches the last 7 days of price data
 3. Chart.js renders interactive price charts
-4. Real-time updates are available through the update endpoint
 
 ## Key Features
 
@@ -60,7 +58,6 @@ Here's a diagram showing the setup:
    - Clean, responsive design
    - Real-time price updates
    - Historical data visualization
-   - RESTful API endpoints
 
 ## AWS Infrastructure Setup
 
@@ -72,9 +69,7 @@ Here's a diagram showing the setup:
 
 2. **Database Management**
    - Set up AWS RDS MySQL instance
-   - Configured automated backups
    - Implemented proper security groups
-   - Set up monitoring and alerts
 
 3. **Load Balancing and Scaling**
    - Configured Application Load Balancer
@@ -85,8 +80,6 @@ Here's a diagram showing the setup:
 4. **Infrastructure as Code**
    - Used Terraform for infrastructure management
    - Defined all AWS resources in code
-   - Implemented proper state management
-   - Set up CI/CD pipeline
 
 ## Encountered Issues
 
