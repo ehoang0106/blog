@@ -14,7 +14,8 @@ tags:
 - docker
 - raspberry-pi
 ---
-As part of my journey in web development and data collection, I developed a real-time currency price tracking application that monitors prices. This project combines web scraping, data storage, and visualization to create a useful tool for currency price monitoring. Initially deployed on AWS, I later migrated the application to a Raspberry Pi to optimize costs while maintaining full functionality.
+As part of my exploration of public cloud technologies, I just built a real-time currency price tracking application for the game Path of Exile 2 (～￣▽￣)～.
+This project combines web scraping, data storage, and visualization to create a useful tool for currency price monitoring. Initially deployed on AWS, I later migrated the application to a Raspberry Pi to optimize costs while maintaining full functionality.
 
 ## Architecture Overview
 
@@ -34,7 +35,6 @@ Here's a diagram showing the setup:
 
 ### Data Collection
 1. The application uses Selenium with Chromium in headless mode to scrape website (orbwatch.trade) every 12 hours
-   Users can get the real-time price by hitting `Update Data` button
 2. Data is stored in AWS RDS MySQL instance with timestamps for historical tracking
 
 ### Data Presentation
@@ -42,7 +42,9 @@ Here's a diagram showing the setup:
 2. The frontend fetches the last 7 days of price data
 3. Chart.js renders interactive price charts
 
-![img](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/orbwatch/Screenshot+2025-04-03+151635.png)
+You can check out my website right here: [https://orb.khoah.com/](https://orb.khoah.com/)
+
+![img](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/orbwatch/Screenshot+2025-04-03+152238.png)
 
 ## Key Features
 
@@ -52,9 +54,7 @@ Here's a diagram showing the setup:
 
 2. **Data Storage**
    - AWS RDS MySQL for managed database service
-   - Efficient table structure for price data
    - Automatic database and table creation
-   - Automated backups and maintenance
 
 3. **Web Interface**
    - Clean, responsive design
@@ -65,8 +65,8 @@ Here's a diagram showing the setup:
 
 1. **Container Management**
    - Containerized application using Docker
-   - Stored images in Amazon ECR
-   - Deployed containers using AWS ECS
+   - Stored image in Amazon ECR
+   - Deployed container using AWS ECS
    - Configured task definitions for container specifications
 
 2. **Database Management**
@@ -76,8 +76,6 @@ Here's a diagram showing the setup:
 3. **Load Balancing and Scaling**
    - Configured Application Load Balancer
    - Set up Auto Scaling Group
-   - Implemented health checks
-   - Configured target groups
 
 4. **Infrastructure as Code**
    - Used Terraform for infrastructure management
