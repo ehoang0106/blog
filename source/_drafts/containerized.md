@@ -1,6 +1,6 @@
 ---
 title: Containerized My Python Flask Web App with AWS ECS, RDS, and Terraform
-date: 2025-03-28 15:30:25
+date: 2025-04-01 15:30:25
 categories:
 - AWS
 tags:
@@ -106,6 +106,8 @@ After running the application on AWS for awhile, I decided to migrate it to a Ra
    - Accessible via orb.khoah.com through Cloudflare Tunnel
    - Local MariaDB for data storage
    - Docker containers for application deployment
+
+![img](https://s3.us-east-1.amazonaws.com/blog.khoah.net/media/orbwatch/pi.png)
 
 ## Improvements
 
