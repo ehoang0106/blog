@@ -102,7 +102,7 @@ You can check out my website right here: [https://orb.khoah.com/](https://orb.kh
 
 ## Cost Optimization and Migration to Raspberry Pi
 
-After running the application on AWS for several months, I decided to migrate it to a Raspberry Pi to optimize costs while maintaining functionality. Here's how I accomplished this:
+After running the application on AWS for awhile, I decided to migrate it to a Raspberry Pi to optimize costs while maintaining functionality. Here's how I accomplished this:
 
 1. **Migration Process**
    - Set up MariaDB on Raspberry Pi
