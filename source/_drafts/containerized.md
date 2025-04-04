@@ -68,22 +68,9 @@ You can check out my website right here: [https://orb.khoah.com/](https://orb.kh
 
 ## Encountered Issues
 
-1. **Selenium Configuration**
-   - Initially struggled with ChromeDriver compatibility
-   - Resolved by using webdriver-manager for automatic driver management
-   - Added necessary Chrome options for headless operation
+One of the first hurdles I encountered was with Selenium configuration. I struggled with ChromeDriver compatibility issues, which were quite frustrating at first. However, I found a solution by implementing webdriver-manager for automatic driver management. This not only resolved the compatibility issues but also made the setup more maintainable. I also had to add specific Chrome options to ensure proper headless operation.
 
-2. **AWS RDS Connection**
-   - Implemented proper connection pooling for RDS
-   - Added error handling for database operations
-   - Ensured proper connection closure
-   - Configured security groups for RDS access
-
-3. **Docker and ECS Setup**
-   - Configured Chrome and ChromeDriver in the container
-   - Optimized container size by cleaning up package lists
-   - Set up proper environment variable handling
-   - Configured container networking for ECS tasks
+The Docker and ECS setup was another area where I learned a lot. I had to figure out how to properly configure Chrome and ChromeDriver within the container, which was tricky at first. I spent time optimizing the container size by cleaning up package lists and ensuring proper environment variable handling. The container networking configuration for ECS tasks was particularly challenging, but it helped me understand how containers communicate in a cloud environment.
 
 ## Cost Optimization and Migration to Raspberry Pi
 
