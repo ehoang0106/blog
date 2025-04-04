@@ -98,10 +98,8 @@ After running the application on AWS for awhile, I decided to migrate it to a Ra
 
 ## Improvements
 
-Currently, I'm using mysql.connector which tightly couples the application to MySQL. While it works well, switching to SQLAlchemy would provide better database abstraction. This means if I want to switch to PostgreSQL or any other database in the future, I won't need to rewrite the database layer from scratch.
+Currently, I'm using `mysql.connector` which tightly couples the application to MySQL. While it works well, switching to `SQLAlchemy` would provide better database abstraction. This means if I want to switch to PostgreSQL or any other database in the future, I won't need to rewrite the database layer from scratch.
 
-Next on my list is implementing GitHub Actions for CI/CD. This will automate the testing and deployment process, ensuring consistent quality and faster updates. I'll set up workflows to run tests, build Docker images, and deploy to both AWS and Raspberry Pi environments.
-
-Finally, I need to address the production server setup. Currently, the application runs directly on Flask's development server, which isn't ideal for production. I plan to switch to Gunicorn, a production-grade WSGI server. While Flask's built-in server is great for development, it's not designed for production workloads - it's single-threaded and doesn't handle multiple requests efficiently. Gunicorn, on the other hand, provides better performance, worker management, and production-ready features.
+Additionally, the application runs directly on Flask's development server, which isn't ideal for production. I plan to switch to Gunicorn, a production-grade WSGI server. While Flask's built-in server is great for development, it's not designed for production workloads - it's single-threaded and doesn't handle multiple requests efficiently. Gunicorn, on the other hand, provides better performance, worker management, and production-ready features.
 
 For the complete implementation, you can check out my code [here](https://github.com/ehoang0106/RDS).
