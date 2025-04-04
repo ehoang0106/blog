@@ -70,7 +70,7 @@ You can check out my website right here: [https://orb.khoah.com/](https://orb.kh
 
 One of the first hurdles I encountered was with Selenium configuration. I struggled with ChromeDriver compatibility issues, which were quite frustrating at first. However, I found a solution by implementing webdriver-manager for automatic driver management. This not only resolved the compatibility issues but also made the setup more maintainable. I also had to add specific Chrome options to ensure proper headless operation.
 
-The Docker and ECS setup was another area where I learned a lot. I had to figure out how to properly configure Chrome and ChromeDriver within the container, which was tricky at first. I spent time optimizing the container size by cleaning up package lists and ensuring proper environment variable handling. The container networking configuration for ECS tasks was particularly challenging, but it helped me understand how containers communicate in a cloud environment.
+The Docker and ECS setup was another learning curve. Configuring Chrome and ChromeDriver in the container took some trial and error, and I had to optimize the container size while ensuring proper networking for ECS tasks. These challenges helped me better understand container orchestration in the cloud.
 
 ## Cost Optimization and Migration to Raspberry Pi
 
