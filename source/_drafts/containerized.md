@@ -12,7 +12,8 @@ tags:
 - alb
 - python
 - docker
-- raspberry-pi
+- pi
+- mysql
 ---
 As part of my exploration of public cloud technologies, I just built a real-time currency price tracking application for the game Path of Exile 2 (～￣▽￣)～.
 This project combines web scraping, data storage, and visualization to create a useful tool for currency price monitoring. Initially deployed on AWS, I later migrated the application to a Raspberry Pi to optimize costs while maintaining full functionality.
@@ -102,4 +103,4 @@ Currently, I'm using `mysql.connector` which tightly couples the application to 
 
 Additionally, the application runs directly on Flask's development server, which isn't ideal for production. I plan to switch to Gunicorn, a production-grade WSGI server. While Flask's built-in server is great for development, it's not designed for production workloads - it's single-threaded and doesn't handle multiple requests efficiently. Gunicorn, on the other hand, provides better performance, worker management, and production-ready features.
 
-For the complete implementation, you can check out my code [here](https://github.com/ehoang0106/RDS).
+For the complete implementation, you can check out my code [here](https://github.com/ehoang0106/containerized).
