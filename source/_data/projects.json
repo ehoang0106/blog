@@ -1,5 +1,10 @@
 [
     {
+        "name": "Containerized a Web App using ECS and Terraform",
+        "url": "https://github.com/ehoang0106/containerized",
+        "desc": "Web scraping, data storage, and visualization for price monitoring"
+    },
+    {
         "name": "SSH to my Raspberry Pi from anywhere",
         "url": "https://github.com/ehoang0106/pi-tunnel",
         "desc": "SSH to Raspberry Pi using Cloudflared Tunnel"
