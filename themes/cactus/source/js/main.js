@@ -111,3 +111,88 @@ $(document).ready(function() {
     }
   }
 });
+
+// call an api endpoint api url: https://count.khoah.net
+
+async function callApi(endpoint, method = 'GET', data = null) {
+  const apiBaseUrl = 'https://count.khoah.net';
+  const url = `${apiBaseUrl}/${endpoint}`;
+  const options = {
+    method,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+  if (data) {
+    options.body = JSON.stringify(data);
+  }
+  try {
+    const response = await fetch(url, options);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error calling API:', error);
+    throw error;
+  }
+}
+
+
+//check if user has already been counted in this session
+async function trackVisitor() {
+  try {
+    //use sessionStorage
+    const hasVisited = localStorage.getItem('hasVisited');
+    const lastVisitTime = localStorage.getItem('lastVisitTime');
+    const cachedCount = localStorage.getItem('visitCount');
+    const currentTime = new Date().getTime();
+    
+    //define session duration
+    const sessionDuration = 15 * 60 * 1000; // 15 minutes
+    
+    //check if this is a new session (no visit recorded or session expired)
+    const isNewSession = !hasVisited || !lastVisitTime || (currentTime - parseInt(lastVisitTime)) > sessionDuration;
+
+    if (isNewSession) {
+      //call API to increment counter
+      const data = await callApi('');
+      console.log('API response:', data);
+      
+      //mark user as visited
+      localStorage.setItem('hasVisited', 'true');
+      localStorage.setItem('lastVisitTime', currentTime.toString());
+      
+      //store the count in localStorage
+      if (data.total_visits !== undefined) {
+        localStorage.setItem('visitCount', data.total_visits);
+        const visitCountElement = document.getElementById('visit-count');
+        if (visitCountElement) {
+          visitCountElement.textContent = data.total_visits;
+        }
+      }
+    } else {
+      //user has already been counted in this session, display on console
+      console.log('Already counted in this session');
+      
+      //update last visit time to extend the session
+      localStorage.setItem('lastVisitTime', currentTime.toString());
+      
+      if (cachedCount) {
+        const visitCountElement = document.getElementById('visit-count');
+        if (visitCountElement) {
+          visitCountElement.textContent = cachedCount;
+        }
+      }
+    }
+  } catch (error) {
+    console.error('Visitor tracking failed:', error);
+    const visitCountElement = document.getElementById('visit-count');
+    if (visitCountElement) {
+      visitCountElement.textContent = 'N/A';
+    }
+  }
+}
+
+//call the function when page loads
+trackVisitor();
