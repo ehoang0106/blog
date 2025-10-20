@@ -1,5 +1,6 @@
 ---
-title: Effortlessly Count Blog Visitors with AWS Lambda and API Gateway
+title: Building a Real-Time Visitor Counter For My Blog with AWS Lambda and API Gateway
+date: 2025-10-16 10:00:00
 categories:
 - AWS
 tags:
@@ -22,7 +23,7 @@ The architecture is pretty straightforward. **DynamoDB** stores the visit data. 
 
 The **Lambda function**, when triggered, it increments today's count in DynamoDB, then queries all date entries to calculate the total visits. The function returns the total count as JSON.
 
-For the API layer, I went with **HTTP API** instead of REST API—lower latency, cheaper pricing, and simpler configuration. I also set up a custom domain using Route 53 and an ACM certificate to make it more "professional".
+For the API layer, I went with **HTTP API** instead of REST API—lower latency, cheaper pricing, and simpler configuration. I also set up a custom domain using Route 53 and an ACM certificate to provide a consistent, branded endpoint and enable secure HTTPS access.
 
 The IAM setup includes a custom role for Lambda with DynamoDB permissions (Query, PutItem, UpdateItem, etc.) and CloudWatch Logs access for debugging.
 
