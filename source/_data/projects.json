@@ -1,5 +1,10 @@
 [
     {
+        "name": "Count site visitors with AWS Lambda and DynamoDB",
+        "url": "https://github.com/ehoang0106/everyday-devops-project/tree/master/day3",
+        "desc": "Serverless visitor counter using AWS Lambda, API Gateway, and DynamoDB"
+    },
+    {
         "name": "Containerized a Web App using ECS and Terraform",
         "url": "https://github.com/ehoang0106/containerized",
         "desc": "Web scraping, data storage, and visualization for price monitoring"
