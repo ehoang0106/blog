@@ -7,6 +7,7 @@ tags:
 - api
 - api-gateway
 - terraform
+- dynamodb
 ---
 
 I recently challenged myself to build at least one project per day until I land my dream job as a CloudOps/DevOps engineer 🥹. Then, I came up with this little project on day 3.
